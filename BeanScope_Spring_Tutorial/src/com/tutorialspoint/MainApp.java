@@ -3,7 +3,9 @@ package com.tutorialspoint;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-// When Beans.xml is set to singleton, returns AAB. Prototype 
+// Beans.xml is set to singleton, gets A A B
+
+// Beans.xml set to prototype, gets A null A
 public class MainApp {
    public static void main(String[] args) {
       ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
@@ -14,7 +16,6 @@ public class MainApp {
       objA.getMessage();
 
       HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
-      
       
       objB.getMessage();
       
